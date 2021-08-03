@@ -49,7 +49,7 @@ Usage:	$0 [options]
 --enumerate-components | -ec    |   Try to enumerate components.
 --joomla-version | -jv          |   Output target Joomla version and exit without further checks
 --no-report | -nr               |   Do not produce a report  
-
+--no-backup | -nb				|   Do not scan for backup files
 --cookie <String>               |   Set cookie.
 --user-agent | -a <User-Agent>  |   Use the specified User-Agent.
 --random-agent | -r             |   Use a random User-Agent.
@@ -103,6 +103,7 @@ GetOptions(
   'cookie=s' => \$cookie,
   'u|url=s' => \$target,
   'm|mass=s' => \$urlfile,
+  'no-backup|nb' => sub { $nobackup =1 },
   'version' => sub { print "\n\nVersion : $version\n\n";exit; },
 
 );

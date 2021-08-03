@@ -70,16 +70,17 @@ sub run_checks {
    
    do "$mepath/core/ver.pl";
    if($jversion!=1) {
-      
-      do "$mepath/exploit/verexploit.pl"; 
+
+      do "$mepath/exploit/verexploit.pl";
       do "$mepath/exploit/com_lfd.pl";
+      do "$mepath/modules/contact.pl";
       do "$mepath/modules/pathdisclure.pl";
       do "$mepath/modules/debugmode.pl";
       do "$mepath/modules/dirlisting.pl"; 
       do "$mepath/modules/missconfig.pl";
       do "$mepath/modules/cpfinder.pl"; 
-      do "$mepath/modules/robots.pl"; 
-      do "$mepath/modules/backupfinder.pl"; 
+      do "$mepath/modules/robots.pl";
+      do "$mepath/modules/backupfinder.pl" if($nobackup!=1);
       do "$mepath/modules/errfinder.pl"; 
       do "$mepath/modules/reg.pl"; 
       do "$mepath/modules/configfinder.pl"; 
